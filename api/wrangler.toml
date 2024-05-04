@@ -1,4 +1,4 @@
-name = 'img'
+name = 'img2'
 workers_dev = true
 type = 'webpack'
 webpack_config = 'webpack.config.js'
