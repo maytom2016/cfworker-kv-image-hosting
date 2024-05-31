@@ -1,36 +1,18 @@
-name = 'img2'
+name = 'img4'
 workers_dev = true
-type = 'webpack'
-webpack_config = 'webpack.config.js'
 compatibility_date = '2021-12-14'
+main = "./src/index.ts"
 
+[vars]
+ENV = 'prod'
+USERNAME = 'admin' # ”√ªß√˚
+PASSWORD = 'admin' # √‹¬Î
+TTL = 3600
+DEDUPE = true
 
-[env.dev]
+[[kv_namespaces]]
+binding = 'ImageKV'
+id = 'a72c15503c7c490a8414c6add0ac0773'
 
-  [env.dev.vars]
-  ENV = 'dev'
-  TTL = 60
-  DEDUPE = false
-
-  [[env.dev.kv_namespaces]]
-  binding = 'ImageKV'
-  preview_id = '873d3300fc41484fbce49b11d533a6b8'
-
-
-[env.prod]
-
-  [env.prod.vars]
-  ENV = 'prod'
-  USERNAME = 'admin'
-  PASSWORD = 'admin'
-  TTL = 3600
-  DEDUPE = false
-
-  [[env.prod.kv_namespaces]]
-  binding = 'image2'
-  id = 'a72c15503c7c490a8414c6add0ac0773'
-
-  [env.prod.site]
-  bucket = '../app/dist'
-  entry-point = 'workers-site'
-
+[site]
+bucket = '../app/dist'
